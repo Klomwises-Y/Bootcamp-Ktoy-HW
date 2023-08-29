@@ -1,0 +1,45 @@
+import random
+
+def paoyingchub():
+  playbox = ["rock","paper","scissors"]
+  player_name = input("What is your name: ")
+  scores_robot = 0
+  scores_player = 0
+  while True:
+    rand = random.randint(0, 2)
+    robot_choose = playbox[rand]
+    player_choose = input("Please choose rock/paper/scissors: ")
+    if robot_choose == player_choose:
+      scores_robot += 0
+      scores_player += 0
+      print(f"Robot choose {robot_choose}. {player_name} choose {player_choose}.\nTie!")
+    elif robot_choose == "rock" and player_choose == "paper":
+      scores_robot += 0
+      scores_player += 1
+      print(f"Robot choose {robot_choose}. {player_name} choose {player_choose}.\n{player_name} win.")
+    elif robot_choose == "rock" and player_choose == "scissors":
+      scores_robot += 1
+      scores_player += 0
+      print(f"Robot choose {robot_choose}. {player_name} choose {player_choose}.\n{player_name} lose.")
+    elif robot_choose == "paper" and player_choose == "rock":
+      scores_robot += 1
+      scores_player += 0
+      print(f"Robot choose {robot_choose}. {player_name} choose {player_choose}.\n{player_name} lose.")
+    elif robot_choose == "paper" and player_choose == "scissors":
+      scores_robot += 0
+      scores_player += 1
+      print(f"Robot choose {robot_choose}. {player_name} choose {player_choose}.\n{player_name} win.")
+    elif robot_choose == "scissors" and player_choose == "rock":
+      scores_robot += 0
+      scores_player += 1
+      print(f"Robot choose {robot_choose}. {player_name} choose {player_choose}.\n{player_name} win.")
+    elif robot_choose == "scissors" and player_choose == "paper":
+      scores_robot += 1
+      scores_player += 0
+      print(f"Robot choose {robot_choose}. {player_name} choose {player_choose}.\n{player_name} lose.")
+    elif player_choose == "quit":
+      print(f"Score Robot/{player_name}:{scores_robot}/{scores_player} ")
+      break
+    else:
+      print("Plese type rock, paper, or scissors")
+    print(f"Robot/{player_name}:{scores_robot}/{scores_player} ")
